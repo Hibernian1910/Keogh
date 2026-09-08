@@ -1,5 +1,29 @@
 [
   {
+    "id": 9,
+    "date": "September 2026",
+    "tag": "Disputed provenance",
+    "style": "standard",
+    "title": "A monogrammed travel case — and a letter that doesn't hold up",
+    "body": [
+      "A Victorian burl-walnut travel and dressing case, held in a private US collection, with cut-crystal jars, silver-lidded boxes and a mother-of-pearl lid plaque. The silver lids carry an engraved monogram reading M·K·W — the Victorian convention of centring the surname initial is consistent with Myles Walter Keogh. The collector, who has asked to remain unnamed, gave permission in July 2026 for these photographs to be published.",
+      "An accompanying letter, undated but claimed as 1915, tells a story of the case being handed down by a Fort Abraham Lincoln stable boy after Keogh's death. That letter cannot be relied upon as written: it invokes Michael Collins as a fundraising figurehead (not associated with Irish-American fundraising until 1919 at the earliest), refers to Ireland as \"Eire\" (an English-usage form dating from the 1937 Constitution), and uses \"Brits\" as a pejorative — a usage that belongs to the Troubles era, decades later. Whatever the case's real history, this letter is not a reliable record of it.",
+      "Shown here for transparency rather than as evidence. The object may or may not have any real connection to Keogh; the letter attached to it does not establish one."
+    ],
+    "images": [
+      { "src": "photos/travel-case/case-exterior.jpg", "alt": "Burl-walnut travel and dressing case with mother-of-pearl lid plaque", "caption": "The case — burl-walnut, mother-of-pearl lid plaque and lock escutcheon" },
+      { "src": "photos/travel-case/case-interior.jpg", "alt": "Interior of the case showing crystal jars, silver boxes and a jewellery tray", "caption": "Interior fittings — cut-crystal jars, silver-lidded boxes, jewellery tray" },
+      { "src": "photos/travel-case/case-monogram-1.jpg", "alt": "Close-up of engraved monogram reading M K W on a silver lid", "caption": "Monogram, first lid — reads M·K·W" },
+      { "src": "photos/travel-case/case-monogram-2.jpg", "alt": "Close-up of matching engraved monogram on a second silver lid", "caption": "Matching monogram, second lid" },
+      { "src": "photos/travel-case/case-letter.jpg", "alt": "Undated pencil-written letter claimed to date from 1915, in questionable condition", "caption": "The undated letter — see caveat above" }
+    ],
+    "quote": "When I was 7 or 8 I was stabling and grooming at Fort Abraham Lincoln. Mr. Keogh and I got along well since we were both of Eire. After the slaughter of Mr. Keogh in June of '76 the men left behind gave to me Mr. Keogh's personal travel set he [had] left at the fort... Now that Michael Collins is raising monies to free my homeland of the [bastard] Brits, Mr. Keogh would want me to sell his box for him. Paid in full. — Patrick Sean Donnel[ly]",
+    "status": "open",
+    "status_label": "Provenance disputed",
+    "footer_text": "Private collection, US · photographs published with permission, July 2026",
+    "footer_link": null
+  },
+  {
     "id": 8,
     "date": "May 2026",
     "tag": "Mystery",

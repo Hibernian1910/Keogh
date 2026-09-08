@@ -72,7 +72,7 @@
 
     .nav-brand {
       font-family: var(--sans);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -86,7 +86,7 @@
 
     .nav-links a {
       font-family: var(--sans);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -106,7 +106,7 @@
 
     .section-label {
       font-family: var(--sans);
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -133,7 +133,7 @@
 
     .board-intro {
       font-family: var(--sans);
-      font-size: 12px;
+      font-size: 13px;
       color: var(--ink-3);
       letter-spacing: 0.06em;
       margin-bottom: 2.5rem;
@@ -204,9 +204,9 @@
 
     .card-tag {
       font-family: var(--sans);
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--card-margin);
       line-height: 1;
@@ -214,7 +214,7 @@
 
     .card-date {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 11.5px;
       color: var(--card-muted);
       letter-spacing: 0.04em;
       line-height: 1;
@@ -222,7 +222,7 @@
 
     .card h2 {
       font-family: var(--serif);
-      font-size: 14.5px;
+      font-size: 16.5px;
       font-weight: bold;
       color: var(--card-text);
       line-height: 1.35;
@@ -231,7 +231,7 @@
 
     .card p {
       font-family: var(--serif);
-      font-size: 13px;
+      font-size: 14.5px;
       color: var(--card-muted);
       line-height: 1.6;
       margin: 0 0 0.5rem;
@@ -244,9 +244,44 @@
       padding: 0 0 0 0.6rem;
       border-left: 2px solid var(--card-rule);
       font-style: italic;
-      font-size: 12.5px;
+      font-size: 14px;
       color: var(--card-muted);
       line-height: 1.55;
+    }
+
+    .card-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0.75rem 0;
+    }
+
+    .card-images a {
+      display: block;
+      width: calc(33.333% - 4px);
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 1px solid var(--card-rule);
+      background: var(--card-hole);
+    }
+
+    .card-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.2s;
+    }
+
+    .card-images a:hover img { transform: scale(1.06); }
+
+    .card-image-caption {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      color: var(--card-muted);
+      letter-spacing: 0.02em;
+      margin: 0.4rem 0 0.6rem;
+      font-style: italic;
     }
 
     .card-footer {
@@ -254,7 +289,7 @@
       padding-top: 0.5rem;
       border-top: 1px solid var(--card-rule);
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 11.5px;
       color: var(--card-muted);
       letter-spacing: 0.03em;
     }
@@ -266,7 +301,7 @@
       align-items: center;
       gap: 5px;
       font-family: var(--sans);
-      font-size: 9px;
+      font-size: 10.5px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
@@ -286,7 +321,7 @@
 
     .loading {
       font-family: var(--sans);
-      font-size: 12px;
+      font-size: 13px;
       color: var(--ink-3);
       letter-spacing: 0.1em;
       padding: 3rem 0;
@@ -300,7 +335,7 @@
 
     footer p {
       font-family: var(--sans);
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.1em;
       color: var(--ink-3);
       margin: 0;
@@ -356,6 +391,23 @@
         ? `<blockquote>${note.quote}</blockquote>`
         : '';
 
+      let imagesHtml = '';
+      if (note.images && note.images.length) {
+        const thumbs = note.images.map(img =>
+          `<a href="${img.src}" target="_blank" rel="noopener">
+             <img src="${img.src}" alt="${img.alt || ''}" loading="lazy">
+           </a>`
+        ).join('');
+        imagesHtml = `<div class="card-images">${thumbs}</div>`;
+        const captions = note.images
+          .filter(img => img.caption)
+          .map(img => img.caption)
+          .join(' &nbsp;·&nbsp; ');
+        if (captions) {
+          imagesHtml += `<p class="card-image-caption">${captions}</p>`;
+        }
+      }
+
       let footerHtml = '';
       if (note.status || note.footer_text) {
         const statusHtml = note.status
@@ -378,6 +430,7 @@
           </div>
           <h2>${note.title}</h2>
           ${bodyHtml}
+          ${imagesHtml}
           ${quoteHtml}
           ${footerHtml}
         </article>`;
